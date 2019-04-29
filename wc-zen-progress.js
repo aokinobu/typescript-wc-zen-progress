@@ -1,6 +1,4 @@
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
-import '@polymer/iron-ajax/iron-ajax.js';
-import '@google-web-components/google-chart';
 
 class ZenProgress extends PolymerElement {
   static get template() {
