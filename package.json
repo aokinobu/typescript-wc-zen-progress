@@ -8,9 +8,7 @@
   "author": "aoki",
   "license": "Apache License",
   "dependencies": {
-    "@polymer/polymer": "^3.2.0",
-    "@webcomponents/webcomponentsjs": "^1.0.20",
-    "@polymer/iron-ajax": "^3.0.1"
+    "@polymer/polymer": "^3.2.0"
   },
   "resolutions": {
     "@webcomponents/webcomponentsjs": "1.0.20"
