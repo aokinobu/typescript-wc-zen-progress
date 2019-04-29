@@ -1,6 +1,18 @@
 {
-  "name": "typescript",
-  "version": "0.0.0",
-  "private": true,
-  "dependencies": {}
+  "name": "wc-zen-progress",
+  "version": "1.0.0",
+  "flat": true,
+  "description": "progress",
+  "main": "index.html",
+  "repository": "https://gitlab.com/projectzen/wc-zen-progress",
+  "author": "aoki",
+  "license": "Apache License",
+  "dependencies": {
+    "@polymer/polymer": "^3.2.0",
+    "@webcomponents/webcomponentsjs": "^1.0.20",
+    "@polymer/iron-ajax": "^3.0.1"
+  },
+  "resolutions": {
+    "@webcomponents/webcomponentsjs": "1.0.20"
+  }
 }
