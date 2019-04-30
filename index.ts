@@ -1,37 +1,53 @@
-import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+class ZenProgress extends HTMLElement {
 
-class ZenProgress extends PolymerElement {
-  static get template() {
-    return html`
-<style type="text/css">
-</style>
-
- selection: {{selection}}
-`;
+  // A getter/setter for an open property.
+  get open() {
+    return this.hasAttribute('open');
   }
-  static get properties() {
-    return {
-      selection: {
-        notify: true,
-        type: String,
-        value: function() {
-          return new String();
-        }
+
+  set open(val) {
+    // Reflect the value of the open property as an HTML attribute.
+    if (val) {
+      this.setAttribute('open', '');
+    } else {
+      this.removeAttribute('open');
+    }
+    this.toggleDrawer();
+  }
+
+  // A getter/setter for a disabled property.
+  get disabled() {
+    return this.hasAttribute('disabled');
+  }
+
+  set disabled(val) {
+    // Reflect the value of the disabled property as an HTML attribute.
+    if (val) {
+      this.setAttribute('disabled', '');
+    } else {
+      this.removeAttribute('disabled');
+    }
+  }
+
+  // Can define constructor arguments if you wish.
+  constructor() {
+    // If you define a constructor, always call super() first!
+    // This is specific to CE and required by the spec.
+    super();
+
+    // Setup a click listener on <app-drawer> itself.
+    this.addEventListener('click', e => {
+      // Don't toggle the drawer if it's disabled.
+      if (this.disabled) {
+        return;
       }
-    };
+      this.toggleDrawer();
+    });
+    this.innerHTML="start";
   }
 
-  ready() {
-    super.ready();
-    console.log("ready");
-    this.selection = "sample";
-  }
-  handleClick(e) {
-    console.log('click');
-  }
-  _handleAjaxPostError(e) {
-    console.log('error: ' + e);
+  toggleDrawer() {
+    this.innerHTML="hi";
   }
 }
-
 customElements.define('wc-zen-progress', ZenProgress);
